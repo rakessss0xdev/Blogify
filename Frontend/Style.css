@@ -1,0 +1,62 @@
+body {
+    background-color: #F5F5F5;
+    padding: 35px;
+    margin: 0; /* Remove default margin */
+    justify-content: center;
+    text-align: center;
+    padding: 200px;
+    background-color: #f4f4f4;
+}
+
+#logo {
+    font-size: 30px;
+    font-family: sans-serif;
+    text-decoration: double;
+    font-weight: bold;
+    position: absolute; /* Position element relative to the page */
+    top: 10px; /* Adjust the distance from the top */
+    left: 15px; /* Adjust the distance from the left */
+}
+
+#Signup-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 30%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white;             /* White text */
+    padding: 10px 20px;       /* Padding */
+    font-size: 16px;          /* Font size */
+    border: none;             /* Remove border */
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;          /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color:  #022702;;
+}
+
+#Signin-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
