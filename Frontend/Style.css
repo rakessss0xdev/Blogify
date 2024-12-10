@@ -60,3 +60,123 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+/* CSS for Landing Page */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+#header {
+    text-align: center;
+    background: linear-gradient(135deg, #4a90e2, #00509e);
+    color: white;
+    padding: 20px 0;
+}
+
+#logo h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navbar Styles */
+#navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#navbar button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #00509e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#navbar button:hover {
+    background-color: #003f7d;
+}
+
+/* Main Content Styles */
+#main-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#main-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#main-content h3 {
+    font-size: 1.5em;
+    color: #555;
+    font-weight: normal;
+}
+
+#background img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+/* About Section Styles */
+#about {
+    padding: 40px 20px;
+    background-color: #eef2f3;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#about p:last-child {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00509e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #navbar button {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #main-content h2 {
+        font-size: 2em;
+    }
+
+    #main-content h3 {
+        font-size: 1.2em;
+    }
+}
