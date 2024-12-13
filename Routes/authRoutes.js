@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../config/db'); // Import User model
 const { hashedPassword, generateToken, comparePassword } = require('../authetication/auth'); // Import auth functions
+const path = require('path')
+router.use(express.static(path.join(__dirname, '../Frontend')));
+// router.set('views', path.join(__dirname, '../Frontend'));
+
 
 // **Signup Route**
 router.post('/Signup', async (req, res) => {

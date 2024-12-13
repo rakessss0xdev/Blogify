@@ -29,5 +29,3 @@ signupForm.addEventListener('click', async (event) => {
         alert('An unexpected error occurred.');
     }
 });
-
-
