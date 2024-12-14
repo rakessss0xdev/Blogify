@@ -1,127 +1,124 @@
-body {
-  margin: 0;
-  padding: 25px;
-  background-color: #101727;
-  font-family: Nunito Sans;
-  font-size: 25px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh-150px);
-}
-
-#hero-content {
-display: flex;
-justify-content: space-between; 
-align-items: center; 
-background-color: #202938;
-padding: 10px 20px; 
-}
-
+/* Component Styles */
 #Logo {
-font-family: 'Nunito Sans', sans-serif;
-font-weight: bold;
-font-size: 30px;
-color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d9bf0;
 }
 
-#searchbar {
-flex-grow: 1;
-max-width: 400px;
-margin: 0 20px;
+input[type="text"] {
+  background-color: #202327;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  color: #e7e9ea;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  width: 100%;
+  transition: background-color 0.2s;
 }
 
-#searchbar input {
-padding: 8px 12px; 
-font-size: 16px;
-border: none;
-border-radius: 15px;
-  font-family: Nunito Sans;
-  font-weight: 45px;
-  position: relative;
-}
-
-p {
-display: flex;
-gap: 50px; 
-}
-
-p span {
-  display: inline-flex;
-  align-items: center;
-  /* justify-content: center; */
-  padding: 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-p span:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.3);
-  border: 1px solid rgba(255,255,255, 0.3);
-  cursor: pointer;
-}
-
-.material-symbols-outlined {
-color: white;
-font-size: 24px; 
-cursor: pointer; 
+input[type="text"]:focus {
+  background-color: #000;
+  border-color: #1d9bf0;
+  outline: none;
 }
 
 #postbar {
-  width: 42ch;
-  background-color: #192734; 
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex; /* Change from flex-direction to display: flex */
-  flex-direction: column; /* Keep column direction */
-  gap: 15px; /* Reduced gap for tighter spacing */
-  align-items: center; /* Center items horizontally */
-  margin: 0 auto; /* Center the entire postbar container horizontally */
+  background-color: #16181c;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
 }
 
 #Post {
-  display: flex;
-  justify-content: center;
-  width: 100%; /* Make the button full width of the postbar */
-}
-
-#postbar input {
-  width: 100%;
-  height: 100px;
-  background-color: #15202b;
-  color: white;
-  border: 1px solid #38444d;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  outline: none;
-  box-sizing: border-box; /* Ensure padding doesn't increase width */
-}
-
-/* Optional: Add character count styling if you plan to implement it */
-#char-count {
-  font-size: 15px;
-  color: #8899a6;
-  align-self: flex-end; /* Align to the right if you add character count */
-}
-
-#Post button {
-  /* align-self: flex-end; */
-  background-color: #1d9bf0; 
+  background-color: #1d9bf0;
   color: white;
   border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
+  border-radius: 9999px;
+  padding: 8px 24px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s;
 }
 
-#Post button:hover {
-  background-color: #1a8cd8; 
+#Post:hover {
+  background-color: #1a8cd8;
 }
 
+/* Icon Styles */
+.material-symbols-outlined {
+  font-size: 1.5rem;
+  color: #71767b;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.material-symbols-outlined:hover {
+  color: #e7e9ea;
+  background-color: rgba(239, 243, 244, 0.1);
+}
+
+/* Icon Container */
+#hero-content p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Layout Styles */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#hero-content {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2f3336;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #000;
+  color: #e7e9ea;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  #hero-content {
+    padding: 8px 12px;
+  }
+  
+  #search-container {
+    padding: 12px;
+  }
+  
+  input[type="text"] {
+    font-size: 0.875rem;
+  }
+}
 
