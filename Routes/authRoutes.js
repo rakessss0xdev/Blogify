@@ -2,10 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../config/db'); // Import User model
 const { hashedPassword, generateToken, comparePassword } = require('../authetication/auth'); // Import auth functions
-const path = require('path')
-router.use(express.static(path.join(__dirname, '../Frontend')));
-// router.set('views', path.join(__dirname, '../Frontend'));
-
 
 // **Signup Route**
 router.post('/Signup', async (req, res) => {
@@ -28,11 +24,12 @@ router.post('/Signup', async (req, res) => {
 
         // Save new user in the database
         const newUser = new User({ username, email, password: hashedPwd });
-        const savedUser = await newUser.save();
+        await newUser.save();
 
-        console.log('User registered successfully:', savedUser);
+        console.log('User registered successfully');
 
-        res.status(201).send('User registered successfully!');
+        // Render Home Page after successful signup
+        res.status(201).render('Home/home');
     } catch (err) {
         console.error('Error during signup:', err);
         res.status(500).send('An error occurred during signup.');
@@ -44,7 +41,7 @@ router.post('/Signin', async (req, res) => {
     try {
         const { username, password } = req.body;
 
-        console.log('Request body', req.body);
+        console.log('Request body:', req.body);
 
         // Validate input
         if (!username || !password) {
@@ -63,11 +60,16 @@ router.post('/Signin', async (req, res) => {
             return res.status(401).send('Invalid credentials.');
         }
 
-        // Generate a JWT
+        // Generate a JWT Token
         const token = generateToken(user._id);
 
-        res.status(200).render("Dashboard");
-        console.log('Signin Succesfuly');
+        // Set Token in Cookie (optional)
+        res.cookie('token', token, { httpOnly: true });
+
+        console.log('User signed in successfully');
+
+        // Render Home Page after successful sign-in
+        res.status(200).render('Home/home');
     } catch (err) {
         console.error('Error during signin:', err);
         res.status(500).send('An error occurred during signin.');
