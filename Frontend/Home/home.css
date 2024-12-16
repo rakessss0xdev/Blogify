@@ -62,6 +62,37 @@ p {
   gap: 25px;
 }
 
+#edittweet {
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#edittweet:hover {
+  background-color: #1a8cd8;
+}
+
+
+#Deletetweet {
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#Deletetweet:hover {
+  background-color: #1a8cd8;
+}
+
 p span {
   display: inline-flex;
   align-items: center;
@@ -113,6 +144,23 @@ p span:hover {
   max-width: 600px;
   margin: 0 auto;
   padding: 16px;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* Base Reset */

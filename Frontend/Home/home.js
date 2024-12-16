@@ -1,22 +1,56 @@
-const inputbox = document.getElementById('input');       // Input element
-const button = document.getElementById('Post');          // Button element
-const span = document.createElement('span');             // Create a new span
-const tweetbox = document.createElement('div');          // Div to hold the post content
+const inputbox = document.getElementById('input');
+const postButton = document.getElementById('Post');
+const deleteButton = document.getElementById('Deletetweet');
+const editButton = document.getElementById('edittweet');
+
+// Create a container for tweets
+const tweetContainer = document.createElement('div');
+tweetContainer.id = 'tweetContainer';
+document.body.appendChild(tweetContainer);
 
 function TweetboxFunction() {
-    button.addEventListener('click', () => {
+    postButton.addEventListener('click', () => {
         if (inputbox.value.trim() === '') {
             alert('Input cannot be empty!');
             return;
         }
 
-       
-        span.textContent = inputbox.value;
+        // Create a new tweet box
+        const tweetBox = document.createElement('div');
+        tweetBox.className = 'tweet-box';
 
-        tweetbox.appendChild(span);
-        document.body.appendChild(tweetbox);
+        // Add content
+        const tweetContent = document.createElement('span');
+        tweetContent.textContent = inputbox.value;
 
+        // Add buttons for delete and edit
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'delete-btn';
+
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.className = 'edit-btn';
+
+        // Append content and buttons to the tweet box
+        tweetBox.appendChild(tweetContent);
+        tweetBox.appendChild(deleteBtn);
+        tweetBox.appendChild(editBtn);
+        tweetContainer.appendChild(tweetBox);
+
+        // Clear input box
         inputbox.value = '';
+
+        // Attach delete event
+        deleteBtn.addEventListener('click', () => {
+            tweetBox.remove();
+        });
+
+        // Attach edit event
+        editBtn.addEventListener('click', () => {
+            inputbox.value = tweetContent.textContent;
+            tweetBox.remove();
+        });
     });
 }
 
